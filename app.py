@@ -4,6 +4,10 @@
 # Import sqlite3
 # Connect to the trees.db database
 # Get a cursor so you can write queries to the database
+from visualizer import display
+import sqlite3
+conn = sqlite3.connect("trees.db")
+cursor = conn.cursor()
 
 # Exercise 3
 # Use the execute function to run a SELECT * query on trees.db
@@ -12,7 +16,8 @@
 # In the terminal, run this Python file
 # Open tables.html with Live Server
 
-
+cursor.execute("SELECT rowid, * FROM trees")
+display(cursor)
 # Exercise 4
 # Edit the SELECT query to show the rowid 
 # In the terminal, run this file again
