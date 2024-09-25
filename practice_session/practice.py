@@ -4,6 +4,12 @@
 # Import display from visualizer.py
 # Connect to the simplefolks database and get a cursor
 
+import sqlite3
+from visualizer import display
+
+conn = sqlite3.connect("simplefolks.sqlite")
+cursor = conn.cursor()
+
 
 # Exercise 2
 # There are 5 tables on the simplefolks database, we are going to run queries on:
@@ -13,6 +19,14 @@
 # Open a terminal from the practice_session folder and run this file
 # tables.html will auto-generate
 # tables.html will only show the output from the last time you call display(), IOW, your last query
+cursor.execute("SELECT rowid, * FROM people")
+display(cursor)
+
+cursor.execute("SELECT rowid, * FROM pets")
+display(cursor)
+
+cursor.execute("SELECT rowid, * FROM politicians")
+display(cursor)
 
 
 # Exercise 3
