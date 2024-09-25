@@ -5,11 +5,11 @@
 # Connect to the simplefolks database and get a cursor
 
 import sqlite3
+
 from visualizer import display
 
 conn = sqlite3.connect("simplefolks.sqlite")
 cursor = conn.cursor()
-
 
 # Exercise 2
 # There are 5 tables on the simplefolks database, we are going to run queries on:
@@ -19,6 +19,10 @@ cursor = conn.cursor()
 # Open a terminal from the practice_session folder and run this file
 # tables.html will auto-generate
 # tables.html will only show the output from the last time you call display(), IOW, your last query
+
+# Exercise 3
+# Edit all 3 SELECT queries to show the rowid
+
 cursor.execute("SELECT rowid, * FROM people")
 display(cursor)
 
@@ -27,7 +31,3 @@ display(cursor)
 
 cursor.execute("SELECT rowid, * FROM politicians")
 display(cursor)
-
-
-# Exercise 3
-# Edit all 3 SELECT queries to show the rowid

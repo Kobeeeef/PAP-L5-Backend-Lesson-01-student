@@ -1,11 +1,13 @@
 # *** Complete Exercise 1 in pyreview.py in the python-review folder first ***
 
+import sqlite3
+from visualizer import display
+
 # Exercise 2
 # Import sqlite3
 # Connect to the trees.db database
-# Get a cursor so you can write queries to the database
-from visualizer import display
-import sqlite3
+# Get a cursor, so you can write queries to the database
+
 conn = sqlite3.connect("trees.db")
 cursor = conn.cursor()
 
@@ -18,6 +20,7 @@ cursor = conn.cursor()
 
 cursor.execute("SELECT rowid, * FROM trees")
 display(cursor)
+
 # Exercise 4
 # Edit the SELECT query to show the rowid 
 # In the terminal, run this file again
